@@ -5,17 +5,21 @@ Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Vuforia
 {
+    
     /// <summary>
     /// A custom handler that implements the ITrackableEventHandler interface.
     /// </summary>
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+        public Canvas canvas;
+        public Button category;
         #region PRIVATE_MEMBER_VARIABLES
- 
+
         private TrackableBehaviour mTrackableBehaviour;
     
         #endregion // PRIVATE_MEMBER_VARIABLES
@@ -52,10 +56,17 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
+               // canvas.gameObject.SetActive(true);
+               // category.gameObject.SetActive(true);
+
             }
             else
             {
                 OnTrackingLost();
+               // canvas.gameObject.SetActive(false);
+               // category.gameObject.SetActive(false);
+
+
             }
         }
 

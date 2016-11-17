@@ -1,0 +1,42 @@
+public GameObject button;
+    private float FirstX;
+    private float FirstY;
+   
+    private bool isLeft = true;
+    private Vector3 currPos;
+	// Use this for initialization
+	void Start () {
+        FirstX = button.transform.position.x;
+        FirstY = button.transform.position.y;
+        currPos = button.transform.position;
+        //currPos = button.transform.position;
+     
+
+        for (int i = 0; i < 8; ++i)
+        {
+            GameObject moreButton = Instantiate(button) as GameObject;
+            moreButton.transform.SetParent(transform, false);
+            moreButton.transform.position = new Vector3(FirstX, FirstY, 0.0f);
+
+            //newButton.transform.position = currPos;
+            if (isLeft == true)
+            {
+                FirstX = button.transform.position.x + 630;
+               
+                isLeft = false;
+            }
+            else {
+                FirstX = button.transform.position.x;
+                FirstY = button.transform.position.y - (90 * (i + 1));
+
+                isLeft = true;
+            }
+            
+        }
+
+    }
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}

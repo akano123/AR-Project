@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/3D Scene.unity
+- path: Assets/Bomb Has Been Planted/Scene/3D_Coffee_Scene.unity
   isLoaded: 1
   isActive: 1
